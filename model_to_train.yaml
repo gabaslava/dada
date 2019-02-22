@@ -15,9 +15,11 @@ config:
       input_dim: 33350
       input_length: 900
       mask_zero: false
-      name: embedding_33
+      name: embedding_34
       output_dim: 100
       trainable: false
+  - class_name: Dropout
+    config: {name: dropout_28, noise_shape: null, rate: 0.2, seed: null, trainable: true}
   - class_name: Conv1D
     config:
       activation: relu
@@ -36,7 +38,7 @@ config:
         config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
       kernel_regularizer: null
       kernel_size: !!python/tuple [4]
-      name: conv1d_32
+      name: conv1d_33
       padding: valid
       strides: !!python/tuple [1]
       trainable: true
@@ -44,7 +46,7 @@ config:
   - class_name: MaxPooling1D
     config:
       data_format: channels_last
-      name: max_pooling1d_6
+      name: max_pooling1d_7
       padding: valid
       pool_size: !!python/tuple [2]
       strides: !!python/tuple [2]
@@ -66,10 +68,10 @@ config:
         class_name: VarianceScaling
         config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
       kernel_regularizer: null
-      name: lstm_7
+      name: lstm_8
       recurrent_activation: hard_sigmoid
       recurrent_constraint: null
-      recurrent_dropout: 0.0
+      recurrent_dropout: 0.4
       recurrent_initializer:
         class_name: Orthogonal
         config: {gain: 1.0, seed: null}
@@ -96,9 +98,9 @@ config:
         class_name: VarianceScaling
         config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
       kernel_regularizer: null
-      name: dense_51
+      name: dense_52
       trainable: true
       units: 2
       use_bias: true
-  name: sequential_33
+  name: sequential_34
 keras_version: 2.2.4
