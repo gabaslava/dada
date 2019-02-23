@@ -15,42 +15,9 @@ config:
       input_dim: 33350
       input_length: 900
       mask_zero: false
-      name: embedding_34
+      name: embedding_44
       output_dim: 100
       trainable: false
-  - class_name: Dropout
-    config: {name: dropout_28, noise_shape: null, rate: 0.2, seed: null, trainable: true}
-  - class_name: Conv1D
-    config:
-      activation: relu
-      activity_regularizer: null
-      bias_constraint: null
-      bias_initializer:
-        class_name: Zeros
-        config: {}
-      bias_regularizer: null
-      data_format: channels_last
-      dilation_rate: !!python/tuple [1]
-      filters: 256
-      kernel_constraint: null
-      kernel_initializer:
-        class_name: VarianceScaling
-        config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
-      kernel_regularizer: null
-      kernel_size: !!python/tuple [4]
-      name: conv1d_33
-      padding: valid
-      strides: !!python/tuple [1]
-      trainable: true
-      use_bias: true
-  - class_name: MaxPooling1D
-    config:
-      data_format: channels_last
-      name: max_pooling1d_7
-      padding: valid
-      pool_size: !!python/tuple [2]
-      strides: !!python/tuple [2]
-      trainable: true
   - class_name: LSTM
     config:
       activation: tanh
@@ -68,7 +35,7 @@ config:
         class_name: VarianceScaling
         config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
       kernel_regularizer: null
-      name: lstm_8
+      name: lstm_11
       recurrent_activation: hard_sigmoid
       recurrent_constraint: null
       recurrent_dropout: 0.4
@@ -81,7 +48,7 @@ config:
       stateful: false
       trainable: true
       unit_forget_bias: true
-      units: 128
+      units: 256
       unroll: false
       use_bias: true
   - class_name: Dense
@@ -98,9 +65,9 @@ config:
         class_name: VarianceScaling
         config: {distribution: uniform, mode: fan_avg, scale: 1.0, seed: null}
       kernel_regularizer: null
-      name: dense_52
+      name: dense_66
       trainable: true
       units: 2
       use_bias: true
-  name: sequential_34
+  name: sequential_44
 keras_version: 2.2.4
